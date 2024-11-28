@@ -1,9 +1,11 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var cors = require('cors')
 var app = express();
+app.use(cors())
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/animals')
+mongoose.connect('mongodb://localhost:3030/animals')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB', err));
 
